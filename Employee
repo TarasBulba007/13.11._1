@@ -1,0 +1,45 @@
+interface iUser
+{
+  public function getName(): string;
+  public function getAge(): int;
+  public function __construct($name, $age);
+}
+
+interface iEmployee
+  extends iUser
+{
+  function getSalary(): int;
+  function setSalary($salary);
+}
+
+class Employee
+  implements iEmployee
+  
+{
+    
+  function getName(): string
+    {
+      return $this->name;
+    }
+  
+  function getAge(): int
+    {
+      return $this->age;
+    }
+  
+  function __construct($name, $age)
+    {
+      $this->name = $name;
+      $this->age = $age;
+    }
+  
+  function getSalary(): int
+    {
+      return $this->salary;
+    }
+  
+  function setSalary($salary)
+    {
+      $this->salary = $salary;
+    }
+}
